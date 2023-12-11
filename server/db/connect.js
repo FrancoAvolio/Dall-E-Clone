@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const connectDB = (url) => {
+  console.log("Connecting to MongoDB with URL:", url); // Agrega esta línea
   mongoose.set("strictQuery", true);
 
   mongoose
