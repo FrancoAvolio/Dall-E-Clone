@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 
+// Importa mongoose y otras dependencias
+
 const connectDB = (url) => {
-  console.log("Connecting to MongoDB with URL:", url); // Agrega esta línea
   mongoose.set("strictQuery", true);
 
   mongoose
-    .connect(url)
+    .connect(url.replace(/['"]/g, "")) // Quitamos comillas de la cadena de conexión
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log(err));
 };
